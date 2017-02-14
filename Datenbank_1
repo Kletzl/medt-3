@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>DB</title>
+</head>
+<body>
+	<h1>DDAATTEENNBBAANNKKEENN</h1>
+<?php
+	$host = 'localhost';
+	$dbname = 'medt3';
+	$user = 'Kletzl';
+	$pwd = 'htluser';
+	try{
+   	$dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pwd);
+
+   	$sql = "SELECT 1CHIT AS TableName, COUNT(*) FROM htl"
+	 
+}
+	catch (PDOException $e) 
+	{
+   		print "Error!: " . $e->getMessage() . "<br/>";
+   		die();
+   	}
+$status = $dbh->getAttribute(PDO::ATTR_CONNECTION_STATUS);
+if($status!=false)
+{
+echo "Es besteht eine Verbindung.";
+}
+else
+{
+echo "Keine Verbindung möglich";
+};
+?>
+</body>
+</html>
